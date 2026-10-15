@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quem somos | Skilliu</title>
+<meta name="description" content="A Skilliu nasceu da convicção de que a transformação começa pelos professores.">
+<link rel="icon" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  BARRA SUPERIOR (igual em todas as telas)
+  Início · Programa SKY ▾ · Recursos · Comunidade · Sobre ▾ · [Fale com a gente]
+  Cada opção dos submenus tem uma linha explicando o que é.
+-->
+<header class="nav" id="nav">
+  <a href="index.html" class="logo" aria-label="Skilliu, página inicial">
+    <span class="logo-nome"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></span>
+    <span class="logo-sub">Steam Education</span>
+  </a>
+  <button class="hamburguer" id="hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Menu principal">
+    <ul class="menu" id="menu">
+      <li><a href="index.html" class="menu-link">Início</a></li>
+
+      <!-- Programa SKY: tudo o que a Skilliu oferece -->
+      <li>
+        <button type="button" class="menu-link" aria-expanded="false" aria-controls="sub-sky">Programa SKY <svg class="seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <ul class="submenu" id="sub-sky">
+          <li><a href="programa-sky.html">
+            <span class="sub-titulo">O que é o Programa SKY</span>
+            <span class="sub-desc">E-book, cursos e assessoria para levar o STEAM à sala de aula</span></a></li>
+          <li><a href="ebook.html">
+            <span class="sub-titulo">E-book <span class="sub-selo sub-selo-verde">Disponível</span></span>
+            <span class="sub-desc">Robótica Descomplicada: 3 projetos prontos, sem kits caros</span></a></li>
+          <li><a href="programa-sky.html#cursos">
+            <span class="sub-titulo">Cursos e formações <span class="sub-selo">Em breve</span></span>
+            <span class="sub-desc">Para professores de todas as disciplinas</span></a></li>
+          <li><a href="assessoria.html">
+            <span class="sub-titulo">Assessoria para escolas</span>
+            <span class="sub-desc">Começa por um diagnóstico online gratuito</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="recursos.html" class="menu-link">Recursos</a></li>
+      <li><a href="comunidade.html" class="menu-link">Comunidade</a></li>
+
+      <!-- Sobre: quem é a Skilliu -->
+      <li>
+        <button type="button" class="menu-link ativo" aria-expanded="false" aria-controls="sub-sobre">Sobre <svg class="seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <ul class="submenu" id="sub-sobre">
+          <li><a href="quem-somos.html" aria-current="page">
+            <span class="sub-titulo">Quem somos</span>
+            <span class="sub-desc">Nossa história e por que a Skilliu existe</span></a></li>
+          <li><a href="quem-somos.html#missao">
+            <span class="sub-titulo">Missão e valores</span>
+            <span class="sub-desc">No que acreditamos</span></a></li>
+          <li><a href="impacto.html">
+            <span class="sub-titulo">Impacto</span>
+            <span class="sub-desc">Como a educação vai além da sala de aula</span></a></li>
+          <li><a href="universo.html">
+            <span class="sub-titulo">Universo Skilliu</span>
+            <span class="sub-desc">Conheça Lia, Hélio, Kyra e Kyro</span></a></li>
+        </ul>
+      </li>
+
+      <li><button type="button" class="menu-cta" data-formulario="contato">Fale com a gente</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="pagina-topo">
+    <div class="secao-inner dividido">
+      <div>
+        <nav class="trilha-nav" aria-label="Você está aqui"><a href="index.html">Início</a> › Sobre › Quem somos</nav>
+        <span class="tag">Quem somos</span>
+        <h1 class="pagina-titulo">O mundo mudou rápido. <em>A educação também precisa acompanhar.</em></h1>
+        <p class="texto">Nascemos da convicção de que a transformação começa por quem prepara o terreno: <strong>os professores.</strong></p>
+        <p class="texto">A Skilliu não é uma escola. Não é uma plataforma de cursos qualquer. É um universo construído para apoiar educadores que acreditam que aprender é experimentar, criar e fazer sentido do mundo.</p>
+        <p class="texto">Aqui, professoras e professores encontram formação prática em STEAM, uma comunidade de educadores que caminham juntos e recursos que funcionam na realidade, com ou sem laboratório, com ou sem grande orçamento. Porque quando a Skilliu chega, os professores não ficam sozinhos.</p>
+        <blockquote class="citacao">"Se não dá do jeito ideal, a gente cria um jeito possível."<cite>Lia, Skiller</cite></blockquote>
+      </div>
+      <img src="fotos/sessao2.png" alt="Professora em sala de aula" class="foto">
+    </div>
+  </section>
+
+  <section class="secao" id="missao">
+    <div class="secao-inner">
+      <span class="tag">Nossa essência</span>
+      <h2 class="titulo">Missão, visão <em>e valores</em></h2>
+      <div class="grade grade-2" style="margin-top:2rem">
+        <article class="cartao">
+          <span class="cartao-icone"><i class="fa-solid fa-bullseye"></i></span>
+          <h3>Missão</h3>
+          <p>Empoderar educadores na área STEAM para formar novas gerações com competências técnicas e humanas, capazes de transformar a si mesmas, suas comunidades e o planeta de forma positiva.</p>
+        </article>
+        <article class="cartao">
+          <span class="cartao-icone"><i class="fa-solid fa-eye"></i></span>
+          <h3>Visão</h3>
+          <p>Ser um ecossistema global de referência em educação STEAM, reconhecido por formar educadores protagonistas e preparar novas gerações para os desafios de um mundo em constante transformação.</p>
+        </article>
+      </div>
+      <h3 class="subtitulo" style="margin-top:2.5rem">Valores</h3>
+      <ul class="chips">
+        <li>Educação transformadora</li><li>Professor no centro</li><li>Aprendizado vivo</li>
+        <li>Curiosidade ao longo da vida</li><li>Coragem para experimentar</li><li>Inclusão e equidade</li>
+        <li>Tecnologia com propósito</li><li>Impacto social e sustentabilidade</li>
+        <li>Colaboração genuína</li><li>Empreendedorismo educacional</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao centro">
+    <div class="secao-inner estreito">
+      <h2 class="titulo">Veja como colocamos isso <em>em prática.</em></h2>
+      <div class="botoes">
+        <a href="programa-sky.html" class="btn btn-verde">Conhecer o Programa SKY</a>
+        <a href="impacto.html" class="btn btn-contorno">Ver nosso impacto</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- RODAPÉ (igual em todas as telas) -->
+<footer class="rodape">
+  <div class="rodape-inner">
+    <div>
+      <span class="logo-nome"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></span>
+      <p class="rodape-desc">Empoderando educadores STEAM. Transformando gerações.<br>Skillers formando Skillis para os desafios do futuro.</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/steameducationbr/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/skilliu/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/skilliu.steameducation" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="rodape-colunas">
+      <div>
+        <h4>Programa SKY</h4>
+        <ul>
+          <li><a href="programa-sky.html">O que é o Programa SKY</a></li>
+          <li><a href="ebook.html">E-book</a></li>
+          <li><a href="programa-sky.html#cursos">Cursos e formações</a></li>
+          <li><a href="assessoria.html">Assessoria para escolas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="quem-somos.html">Quem somos</a></li>
+          <li><a href="quem-somos.html#missao">Missão e valores</a></li>
+          <li><a href="impacto.html">Impacto</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="universo.html">Universo Skilliu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:bora@skilliu.org">bora@skilliu.org</a></li>
+          <li><a href="https://wa.me/5518996769040" target="_blank" rel="noopener">18 99676 9040</a></li>
+          <li><a href="#" data-formulario="contato">Fale com a gente</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rodape-base">
+    <p>© <span class="ano">2026</span> Skilliu · CNPJ: 34.697.967/0001-96 · Alinhado à BNCC · PNED · ODS da Agenda 2030</p>
+    <p><a href="termos-de-uso.html">Termos de Uso</a> · <a href="politica-de-privacidade.html">Política de Privacidade</a></p>
+  </div>
+</footer>
+
+<!-- Modal único: o conteúdo muda conforme o botão clicado (ver script.js) -->
+<dialog class="modal" id="modalForm"></dialog>
+
+<!-- Legenda do protótipo -->
+<p class="legenda-base">Texto em vermelho = base, precisa de informação da equipe</p>
+
+<script src="script.js"></script>
+</body>
+</html>

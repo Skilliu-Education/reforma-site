@@ -1,0 +1,18 @@
+Cole aqui as imagens do site institucional, com os mesmos nomes:
+
+favicon.png
+sessao1.png
+sessao2.png
+sessao3-trilha1.png
+sessao3-trilha2.png
+sessao3-trilha3.png
+sessao6.png
+skilliblocks.png
+ebook-robotica.png
+ebook-dicionario.png
+ebook-skilliblocks.png
+ebbok-papelao.png
+mascote-lia.png
+mascote-helio.png
+mascote-kyra.png
+mascote-kyro.png

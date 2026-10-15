@@ -1,0 +1,347 @@
+/* =========================================================
+   SKILLIU — PROTÓTIPO DE NAVEGAÇÃO
+   Mesma identidade do site (fontes, verde e azul da marca),
+   com fundos brancos e detalhes em tons de verde.
+   ========================================================= */
+
+:root {
+  --g1: #32a557;   /* verde principal */
+  --g2: #28904a;   /* verde escuro (textos verdes) */
+  --g3: #8de6a7;   /* verde claro */
+  --g4: #c8f5d8;   /* verde bem claro */
+  --g5: #eef9f1;   /* verde quase branco (fundos de cartões) */
+  --b1: #152b55;   /* azul marinho (títulos) */
+  --b3: #3a5f95;
+  --texto: rgba(21, 43, 85, .74);
+  --borda: rgba(50, 165, 87, .18);
+  --sombra: rgba(21, 43, 85, .07);
+  --vermelho: #d32f2f;  /* textos BASE, que precisam de informação da equipe */
+  --largura: 1140px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { font-family: 'Nunito', sans-serif; background: #fff; color: var(--b1); line-height: 1.6; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--g1); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- TEXTO BASE (vermelho) ----------
+   Tudo o que foi acrescentado e ainda precisa ser
+   confirmado pela equipe aparece em vermelho, com a etiqueta "base". */
+.base { color: var(--vermelho) !important; -webkit-text-fill-color: var(--vermelho); }
+.base::before {
+  content: 'base'; display: inline-block; margin-right: .35rem; vertical-align: .12em;
+  font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-style: normal;
+  color: #fff; -webkit-text-fill-color: #fff; background: var(--vermelho); padding: .05rem .4rem; border-radius: 4px;
+}
+.legenda-base {
+  position: fixed; left: 16px; bottom: 16px; z-index: 250;
+  font-size: .78rem; font-weight: 700; color: var(--vermelho);
+  background: #fff; border: 1px solid rgba(211, 47, 47, .3); border-radius: 100px;
+  padding: .45rem .9rem; box-shadow: 0 6px 20px var(--sombra);
+}
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+.nav {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 300;
+  width: min(var(--largura), 94vw);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .7rem .8rem .7rem 1.8rem;
+  background: rgba(255, 255, 255, .85); backdrop-filter: blur(24px);
+  border: 1px solid var(--borda); border-radius: 100px;
+  box-shadow: 0 4px 24px var(--sombra); transition: box-shadow .3s, background .3s;
+}
+.nav.rolou { background: rgba(255, 255, 255, .98); box-shadow: 0 8px 40px rgba(21, 43, 85, .1); }
+
+.logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+.logo-nome { font-family: 'Urbanist', sans-serif; font-size: 1.55rem; font-weight: 900; letter-spacing: -.5px; }
+.logo-skill { color: var(--g1); }
+.logo-iu { color: var(--b1); }
+.logo-sub { font-size: .52rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--b3); opacity: .7; margin-top: .1rem; }
+
+.menu { display: flex; align-items: center; gap: .3rem; list-style: none; }
+.menu > li { position: relative; }
+.menu-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font: inherit; font-weight: 700; font-size: .9rem; color: rgba(21, 43, 85, .65);
+  background: none; border: 0; cursor: pointer; text-decoration: none;
+  padding: .55rem .85rem; border-radius: 100px; transition: color .2s, background .2s;
+}
+.menu-link:hover, .menu-link[aria-expanded="true"] { color: var(--b1); background: var(--g5); }
+.menu-link.ativo { color: var(--g2); background: var(--g5); }
+.seta { width: 10px; height: 10px; flex-shrink: 0; overflow: visible; transform-origin: 50% 50%; transition: transform .2s; }
+.menu-link[aria-expanded="true"] .seta { transform: rotate(180deg); }
+
+.menu-cta {
+  margin-left: .5rem; background: var(--g1); color: #fff; border: 0; cursor: pointer;
+  font: inherit; font-weight: 800; font-size: .88rem; padding: .65rem 1.3rem; border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(50, 165, 87, .3); transition: background .2s;
+}
+.menu-cta:hover { background: var(--g2); }
+
+/* Submenu: cada opção tem nome + uma linha explicando o que é */
+.submenu {
+  position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%);
+  width: 320px; list-style: none; padding: .6rem; display: none;
+  background: #fff; border: 1px solid var(--borda); border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(21, 43, 85, .14);
+}
+.submenu.aberto { display: block; }
+.submenu a { display: block; text-decoration: none; padding: .75rem .9rem; border-radius: 14px; transition: background .2s; }
+.submenu a:hover, .submenu a:focus-visible, .submenu a[aria-current="page"] { background: var(--g5); }
+.sub-titulo { display: flex; align-items: center; gap: .5rem; font-weight: 800; font-size: .95rem; color: var(--b1); }
+.sub-desc { display: block; font-size: .83rem; color: var(--texto); line-height: 1.4; margin-top: .15rem; }
+.sub-selo { font-size: .66rem; font-weight: 800; padding: .1rem .5rem; border-radius: 100px; background: #eceff2; color: #6b7684; }
+.sub-selo-verde { background: var(--g4); color: var(--g2); }
+
+.hamburguer { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: .6rem; }
+.hamburguer span { display: block; width: 22px; height: 2px; background: var(--b1); border-radius: 2px; }
+
+/* =========================================================
+   ELEMENTOS COMUNS
+   ========================================================= */
+.secao { padding: 5rem 5vw; }
+.secao + .secao { border-top: 1px solid var(--borda); }
+.secao-inner { max-width: var(--largura); margin: 0 auto; }
+.estreito { max-width: 760px; }
+
+.tag {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--g2); background: var(--g5); border: 1px solid var(--borda);
+  padding: .3rem .9rem; border-radius: 100px; margin-bottom: 1rem;
+}
+.titulo { font-family: 'Urbanist', sans-serif; font-weight: 900; line-height: 1.1; font-size: clamp(1.7rem, 3vw, 2.5rem); margin-bottom: 1rem; }
+.titulo em, .hero-titulo em, .pagina-titulo em {
+  font-style: normal; background: linear-gradient(135deg, var(--g1), #5dcf7a);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.subtitulo { font-family: 'Urbanist', sans-serif; font-weight: 900; font-size: 1.35rem; line-height: 1.2; margin-bottom: .6rem; }
+.texto { color: var(--texto); line-height: 1.8; margin-bottom: .9rem; max-width: 64ch; }
+.destaque-linha { font-size: 1.1rem; font-weight: 700; border-left: 3px solid var(--g1); padding-left: .9rem; margin-bottom: 1rem; }
+.citacao { border-left: 3px solid var(--g1); padding: .3rem 0 .3rem 1rem; margin: 1.4rem 0; font-style: italic; }
+.citacao cite { display: block; font-style: normal; font-size: .85rem; font-weight: 800; color: var(--g2); margin-top: .3rem; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .9rem 1.7rem; border-radius: 100px; border: 2px solid transparent;
+  font: inherit; font-weight: 800; font-size: .95rem; text-decoration: none; cursor: pointer;
+  transition: transform .2s, background .2s, border-color .2s;
+}
+.btn-verde { background: var(--g1); color: #fff; box-shadow: 0 6px 24px rgba(50, 165, 87, .28); }
+.btn-verde:hover { background: var(--g2); transform: translateY(-2px); }
+.btn-contorno { color: var(--g2); background: #fff; border-color: var(--g3); }
+.btn-contorno:hover { border-color: var(--g1); background: var(--g5); }
+/* Botão inativo: cinza, sem clique, com o motivo escrito */
+.btn-off, .btn-off:hover { background: #eceff2; color: #7d8794; border-color: transparent; box-shadow: none; transform: none; cursor: not-allowed; }
+.botoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+.nota { font-size: .84rem; color: var(--texto); margin-top: .7rem; display: flex; gap: .45rem; align-items: flex-start; }
+.nota i { color: var(--g1); margin-top: .2rem; }
+
+.selo { display: inline-block; font-size: .72rem; font-weight: 800; padding: .25rem .75rem; border-radius: 100px; background: var(--g4); color: var(--g2); }
+.selo-off { background: #eceff2; color: #6b7684; }
+
+/* Caixa verde clarinha de aviso ("em breve", "em construção") */
+.aviso {
+  display: flex; gap: .8rem; align-items: flex-start; margin: 1.2rem 0;
+  padding: 1rem 1.2rem; background: var(--g5); border: 1px solid var(--borda); border-radius: 16px; font-size: .95rem;
+}
+.aviso i { color: var(--g1); font-size: 1.1rem; margin-top: .2rem; }
+.aviso strong { color: var(--g2); }
+
+/* Etiquetas pequenas (temas, fatos, valores) */
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; margin: .6rem 0 1rem; }
+.chips li { font-size: .85rem; font-weight: 700; color: var(--g2); background: var(--g5); border: 1px solid var(--borda); border-radius: 100px; padding: .35rem .85rem; }
+
+/* Duas colunas: texto + imagem */
+.dividido { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.dividido-invertido > :first-child { order: 2; }
+.foto { width: 100%; height: 400px; object-fit: cover; border-radius: 24px; background: var(--g5); box-shadow: 0 20px 60px var(--sombra); }
+
+/* Cartões */
+.grade { display: grid; gap: 1.2rem; }
+.grade-2 { grid-template-columns: repeat(2, 1fr); }
+.grade-3 { grid-template-columns: repeat(3, 1fr); }
+.grade-4 { grid-template-columns: repeat(4, 1fr); }
+.cartao {
+  background: #fff; border: 1px solid var(--borda); border-radius: 22px; padding: 1.8rem;
+  display: flex; flex-direction: column; gap: .5rem; transition: box-shadow .2s, transform .2s;
+}
+a.cartao { text-decoration: none; }
+a.cartao:hover { box-shadow: 0 16px 40px var(--sombra); transform: translateY(-3px); }
+.cartao-icone { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--g5); color: var(--g1); font-size: 1.2rem; margin-bottom: .4rem; }
+.cartao h3 { font-family: 'Urbanist', sans-serif; font-size: 1.25rem; font-weight: 900; line-height: 1.2; }
+.cartao p { font-size: .95rem; color: var(--texto); flex: 1; }
+.cartao-link { font-weight: 800; font-size: .9rem; color: var(--g2); margin-top: .4rem; }
+.cartao-img { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; background: var(--g5); margin-bottom: .6rem; }
+
+/* Caminho "Você está aqui" no topo das telas internas */
+.trilha-nav { font-size: .85rem; color: var(--texto); margin-bottom: 1.2rem; }
+.trilha-nav a { color: var(--g2); font-weight: 700; text-decoration: none; }
+.trilha-nav a:hover { text-decoration: underline; }
+
+/* =========================================================
+   HERO DA HOME E TOPO DAS TELAS INTERNAS
+   ========================================================= */
+.hero { min-height: 92vh; display: flex; align-items: center; padding: 8rem 5vw 4rem; position: relative; overflow: hidden; }
+.hero::before, .pagina-topo::before {
+  content: ''; position: absolute; top: -220px; right: -120px; width: 620px; height: 620px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(141, 230, 167, .25), transparent 65%); pointer-events: none;
+}
+.hero-inner { max-width: var(--largura); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.05fr 1fr; gap: 4rem; align-items: center; position: relative; }
+.hero-titulo { font-family: 'Urbanist', sans-serif; font-size: clamp(2.1rem, 3.6vw, 3.5rem); font-weight: 900; line-height: 1.08; margin-bottom: 1.2rem; }
+.hero-foto { width: 100%; height: 460px; object-fit: cover; object-position: center 20%; border-radius: 24px; box-shadow: 0 24px 80px rgba(21, 43, 85, .14); background: var(--g5); }
+
+.pagina-topo { padding: 8.5rem 5vw 3.5rem; position: relative; overflow: hidden; }
+.pagina-topo .secao-inner { position: relative; }
+.pagina-titulo { font-family: 'Urbanist', sans-serif; font-size: clamp(2rem, 3.6vw, 3.1rem); font-weight: 900; line-height: 1.08; margin-bottom: 1rem; max-width: 20ch; }
+.pagina-topo .texto { font-size: 1.05rem; }
+
+/* =========================================================
+   PROGRAMA SKY: as trilhas
+   ========================================================= */
+.trilha { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.trilha + .trilha { margin-top: 4.5rem; }
+.trilha-invertida > :first-child { order: 2; }
+.trilha-foto { position: relative; }
+.trilha-foto img { width: 100%; height: 340px; object-fit: cover; border-radius: 22px; background: var(--g5); }
+.trilha-num { position: absolute; top: 1rem; left: 1rem; background: var(--g1); color: #fff; font-size: .75rem; font-weight: 800; padding: .35rem .9rem; border-radius: 100px; }
+.trilha-para { font-size: .85rem; font-weight: 800; color: var(--g2); margin-bottom: .4rem; }
+
+/* Passos numerados (como funciona) */
+.passos { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; counter-reset: passo; }
+.passos li { counter-increment: passo; border: 1px solid var(--borda); border-radius: 20px; padding: 1.6rem; }
+.passos li::before { content: counter(passo); display: block; font-family: 'Urbanist', sans-serif; font-size: 2rem; font-weight: 900; color: var(--g1); line-height: 1; margin-bottom: .6rem; }
+.passos h3 { font-family: 'Urbanist', sans-serif; font-size: 1.15rem; font-weight: 900; margin-bottom: .3rem; }
+.passos p { font-size: .93rem; color: var(--texto); }
+
+/* =========================================================
+   TELA DO E-BOOK
+   ========================================================= */
+.ebook-topo { padding: 8.5rem 5vw 4rem; }
+.ebook-topo-inner { max-width: var(--largura); margin: 0 auto; display: grid; grid-template-columns: .85fr 1.15fr; gap: 4rem; align-items: center; }
+.capa { width: 100%; max-width: 380px; margin: 0 auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 16px; box-shadow: 0 30px 70px rgba(21, 43, 85, .18); background: var(--g5); }
+.promessa { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 1rem; }
+.compra { margin-top: 1.8rem; padding: 1.5rem; background: #fff; border: 1px solid var(--borda); border-radius: 20px; box-shadow: 0 12px 40px var(--sombra); max-width: 460px; }
+.preco-de { font-size: .9rem; color: var(--texto); text-decoration: line-through; }
+.preco { font-family: 'Urbanist', sans-serif; font-size: 2.4rem; font-weight: 900; line-height: 1; }
+.compra .btn { width: 100%; margin-top: 1rem; }
+.lista-check { list-style: none; display: grid; gap: .8rem; margin-top: .4rem; }
+.lista-check li { display: flex; gap: .7rem; align-items: flex-start; font-weight: 700; }
+.lista-check li::before { content: '✓'; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--g4); color: var(--g2); font-weight: 900; display: grid; place-items: center; font-size: .85rem; }
+.caixa-verde { background: var(--g5); border: 1px solid var(--borda); border-radius: 22px; padding: 2rem; }
+.duvidas { max-width: 760px; margin: 0 auto; display: grid; gap: .7rem; }
+.duvidas details { border: 1px solid var(--borda); border-radius: 16px; padding: 1.1rem 1.3rem; }
+.duvidas summary { font-weight: 800; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.duvidas summary::-webkit-details-marker { display: none; }
+.duvidas summary::after { content: '+'; font-size: 1.3rem; line-height: 1; color: var(--g1); }
+.duvidas details[open] summary::after { content: '–'; }
+.duvidas details p { color: var(--texto); margin-top: .6rem; }
+.centro { text-align: center; }
+.centro .texto, .centro .compra { margin-left: auto; margin-right: auto; }
+.centro .botoes { justify-content: center; }
+
+/* E-books da coletânea (tela Recursos) */
+.ebook-mini img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; background: var(--g5); }
+.ebook-off img { filter: grayscale(70%); opacity: .55; }
+
+/* =========================================================
+   UNIVERSO SKILLIU
+   ========================================================= */
+.personagem { display: grid; grid-template-columns: 150px 1fr; gap: 1.4rem; align-items: center; border: 1px solid var(--borda); border-radius: 24px; padding: 1.6rem; }
+.personagem img { width: 150px; height: 150px; object-fit: contain; }
+.personagem-papel { font-size: .82rem; font-weight: 800; color: var(--g2); }
+.personagem h3 { font-family: 'Urbanist', sans-serif; font-size: 1.7rem; font-weight: 900; margin-bottom: .3rem; }
+.personagem p { color: var(--texto); font-size: .95rem; }
+.mascotes-mini { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+.mascotes-mini figure { text-align: center; }
+.mascotes-mini img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+.mascotes-mini figcaption { font-family: 'Urbanist', sans-serif; font-weight: 900; margin-top: .3rem; }
+
+/* =========================================================
+   MODAL DE FORMULÁRIO
+   ========================================================= */
+.modal { border: 0; border-radius: 24px; padding: 2.2rem; width: min(500px, 92vw); margin: auto; color: var(--b1); box-shadow: 0 30px 90px rgba(21, 43, 85, .3); }
+.modal::backdrop { background: rgba(21, 43, 85, .45); }
+.modal-fechar { position: absolute; top: 1rem; right: 1.1rem; background: none; border: 0; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--texto); }
+.modal h2 { font-family: 'Urbanist', sans-serif; font-weight: 900; font-size: 1.5rem; margin-bottom: .6rem; padding-right: 1.5rem; }
+.modal-explica { font-size: .93rem; color: var(--texto); margin-bottom: 1.2rem; }
+.modal-explica p + p { margin-top: .6rem; }
+.campos { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem 1rem; }
+.campo { display: flex; flex-direction: column; gap: .3rem; }
+.campo-inteiro { grid-column: 1 / -1; }
+.campo label { font-size: .86rem; font-weight: 800; }
+.campo input, .campo select, .campo textarea {
+  font: inherit; font-size: .95rem; color: var(--b1); background: #fff;
+  border: 1.5px solid rgba(21, 43, 85, .15); border-radius: 12px; padding: .7rem .85rem;
+}
+.campo textarea { min-height: 100px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: none; border-color: var(--g1); }
+.aceite { display: flex; gap: .55rem; align-items: flex-start; font-size: .84rem; color: var(--texto); }
+.aceite input { margin-top: .25rem; accent-color: var(--g1); }
+.aceite a { color: var(--g2); font-weight: 700; }
+.erro-campo { color: var(--vermelho); font-size: .78rem; font-weight: 700; }
+.invalido { border-color: rgba(211, 47, 47, .7) !important; }
+.modal .btn { width: 100%; margin-top: 1.2rem; }
+.modal-prototipo { font-size: .75rem; color: #8a94a3; text-align: center; margin-top: .8rem; }
+.modal-sucesso { text-align: center; padding: 1rem 0 .4rem; }
+.modal-sucesso i { font-size: 2.6rem; color: var(--g1); margin-bottom: .8rem; }
+.modal-sucesso p { color: var(--texto); margin-bottom: .6rem; }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.rodape { border-top: 3px solid var(--g4); padding: 4rem 5vw 2rem; color: var(--texto); }
+.rodape-inner { max-width: var(--largura); margin: 0 auto; display: grid; grid-template-columns: 1.3fr 2fr; gap: 3rem; }
+.rodape-desc { font-size: .92rem; margin-top: 1rem; max-width: 34ch; }
+.redes { display: flex; gap: .6rem; margin-top: 1.2rem; }
+.redes a { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--g5); color: var(--g2); text-decoration: none; transition: background .2s; }
+.redes a:hover { background: var(--g4); }
+.rodape-colunas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.rodape h4 { color: var(--b1); font-family: 'Urbanist', sans-serif; font-weight: 800; margin-bottom: .8rem; }
+.rodape ul { list-style: none; display: grid; gap: .45rem; }
+.rodape ul a { text-decoration: none; font-size: .9rem; }
+.rodape ul a:hover { color: var(--g2); }
+.rodape-base { max-width: var(--largura); margin: 3rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--borda); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem; font-size: .82rem; }
+.rodape-base a { color: var(--g2); }
+
+/* =========================================================
+   CELULAR E TABLET
+   ========================================================= */
+@media (max-width: 1000px) {
+  .hamburguer { display: flex; }
+  .nav { border-radius: 26px; padding-left: 1.3rem; }
+  .menu {
+    display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: .15rem;
+    background: #fff; border: 1px solid var(--borda); border-radius: 22px; padding: .8rem;
+    box-shadow: 0 16px 40px rgba(21, 43, 85, .15); max-height: 75vh; overflow-y: auto;
+  }
+  .menu.aberto { display: flex; }
+  .menu-link { width: 100%; justify-content: space-between; padding: .8rem 1rem; border-radius: 12px; }
+  .submenu { position: static; transform: none; width: auto; box-shadow: none; border: 0; padding: 0 0 .4rem .6rem; }
+  .menu-cta { margin: .5rem 0 0; width: 100%; }
+  .grade-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .secao { padding: 3.8rem 5vw; }
+  .hero-inner, .dividido, .trilha, .ebook-topo-inner, .rodape-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-inner > :last-child { order: -1; }
+  .dividido-invertido > :first-child, .trilha-invertida > :first-child { order: 0; }
+  .hero-foto { height: 280px; }
+  .foto, .trilha-foto img { height: 260px; }
+  .grade-2, .grade-3, .passos { grid-template-columns: 1fr; }
+  .capa { max-width: 260px; }
+  .compra { max-width: none; }
+  .rodape-colunas { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .grade-4, .mascotes-mini { grid-template-columns: repeat(2, 1fr); }
+  .campos { grid-template-columns: 1fr; }
+  .personagem { grid-template-columns: 1fr; text-align: center; }
+  .personagem img { margin: 0 auto; }
+  .legenda-base { left: 8px; right: 8px; text-align: center; }
+}

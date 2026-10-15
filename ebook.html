@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robótica Descomplicada | E-book Skilliu</title>
+<meta name="description" content="E-book Robótica Descomplicada: aplique robótica na sala de aula sem saber programação e sem kits caros.">
+<link rel="icon" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  BARRA SUPERIOR (igual em todas as telas)
+  Início · Programa SKY ▾ · Recursos · Comunidade · Sobre ▾ · [Fale com a gente]
+  Cada opção dos submenus tem uma linha explicando o que é.
+-->
+<header class="nav" id="nav">
+  <a href="index.html" class="logo" aria-label="Skilliu, página inicial">
+    <span class="logo-nome"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></span>
+    <span class="logo-sub">Steam Education</span>
+  </a>
+  <button class="hamburguer" id="hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Menu principal">
+    <ul class="menu" id="menu">
+      <li><a href="index.html" class="menu-link">Início</a></li>
+
+      <!-- Programa SKY: tudo o que a Skilliu oferece -->
+      <li>
+        <button type="button" class="menu-link ativo" aria-expanded="false" aria-controls="sub-sky">Programa SKY <svg class="seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <ul class="submenu" id="sub-sky">
+          <li><a href="programa-sky.html">
+            <span class="sub-titulo">O que é o Programa SKY</span>
+            <span class="sub-desc">E-book, cursos e assessoria para levar o STEAM à sala de aula</span></a></li>
+          <li><a href="ebook.html" aria-current="page">
+            <span class="sub-titulo">E-book <span class="sub-selo sub-selo-verde">Disponível</span></span>
+            <span class="sub-desc">Robótica Descomplicada: 3 projetos prontos, sem kits caros</span></a></li>
+          <li><a href="programa-sky.html#cursos">
+            <span class="sub-titulo">Cursos e formações <span class="sub-selo">Em breve</span></span>
+            <span class="sub-desc">Para professores de todas as disciplinas</span></a></li>
+          <li><a href="assessoria.html">
+            <span class="sub-titulo">Assessoria para escolas</span>
+            <span class="sub-desc">Começa por um diagnóstico online gratuito</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="recursos.html" class="menu-link">Recursos</a></li>
+      <li><a href="comunidade.html" class="menu-link">Comunidade</a></li>
+
+      <!-- Sobre: quem é a Skilliu -->
+      <li>
+        <button type="button" class="menu-link" aria-expanded="false" aria-controls="sub-sobre">Sobre <svg class="seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <ul class="submenu" id="sub-sobre">
+          <li><a href="quem-somos.html">
+            <span class="sub-titulo">Quem somos</span>
+            <span class="sub-desc">Nossa história e por que a Skilliu existe</span></a></li>
+          <li><a href="quem-somos.html#missao">
+            <span class="sub-titulo">Missão e valores</span>
+            <span class="sub-desc">No que acreditamos</span></a></li>
+          <li><a href="impacto.html">
+            <span class="sub-titulo">Impacto</span>
+            <span class="sub-desc">Como a educação vai além da sala de aula</span></a></li>
+          <li><a href="universo.html">
+            <span class="sub-titulo">Universo Skilliu</span>
+            <span class="sub-desc">Conheça Lia, Hélio, Kyra e Kyro</span></a></li>
+        </ul>
+      </li>
+
+      <li><button type="button" class="menu-cta" data-formulario="contato">Fale com a gente</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!--
+    TELA DO E-BOOK: vitrine antes da Hotmart.
+    O professor vê o que é, para quem é e quanto custa.
+    A Hotmart só abre quando ele clica em "Comprar na Hotmart", com aviso.
+  -->
+  <section class="ebook-topo">
+    <div class="ebook-topo-inner">
+      <img src="fotos/ebook-robotica.png" alt="Capa do e-book Robótica Descomplicada" class="capa">
+      <div>
+        <nav class="trilha-nav" aria-label="Você está aqui"><a href="index.html">Início</a> › <a href="programa-sky.html">Programa SKY</a> › E-book</nav>
+        <span class="tag">Trilha 1 · E-book</span>
+        <h1 class="pagina-titulo">Robótica <em>Descomplicada</em></h1>
+        <p class="promessa">Aplique robótica na sua sala de aula mesmo sem saber programação e sem gastar com kits caros.</p>
+        <span class="selo">Para professores do ensino fundamental</span>
+        <div class="compra">
+          <span class="preco-de">De R$ 69</span>
+          <p class="preco">R$ 49</p>
+          <a href="https://marketing11782308372.hotmart.host/comprarebook" class="btn btn-verde" target="_blank" rel="noopener">Comprar na Hotmart</a>
+          <p class="nota"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abre em uma nova aba a página da Hotmart, onde o pagamento é feito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-inner">
+      <span class="tag">O método</span>
+      <h2 class="titulo">Três ideias que tornam a robótica <em>possível na sua escola.</em></h2>
+      <p class="texto">Robótica educacional não é sobre tecnologia cara. É sobre pensamento, criatividade e resolução de problemas.</p>
+      <ol class="passos" style="margin-top:2rem">
+        <li><h3>Robótica desplugada</h3><p>Ensinar os conceitos sem depender de tecnologia complexa, usando o que está ao redor.</p></li>
+        <li><h3>Pensamento computacional</h3><p>Desenvolver lógica e raciocínio nos alunos de forma prática e acessível.</p></li>
+        <li><h3>Ciclo da inovação</h3><p>Problema, ideia, protótipo, teste e melhoria. Uma estrutura que qualquer professor consegue conduzir.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-inner dividido" style="align-items:start">
+      <div>
+        <span class="tag">O que você recebe</span>
+        <h2 class="titulo">Tudo pronto para <em>usar na próxima aula.</em></h2>
+        <ul class="lista-check">
+          <li>E-book completo Robótica Descomplicada</li>
+          <li>3 projetos prontos para aplicar com seus alunos</li>
+          <li>Método passo a passo</li>
+          <li>Ligação com a BNCC em cada atividade</li>
+        </ul>
+      </div>
+      <aside class="caixa-verde">
+        <span class="tag">Opcional</span>
+        <h3 class="subtitulo">Tutorial prático em vídeo</h3>
+        <p class="texto">Veja cada projeto sendo montado e como conduzir a aula, no seu ritmo, quantas vezes quiser.</p>
+        <p class="texto"><strong>+ R$ 19</strong> ao adicionar junto com o e-book, na página da Hotmart.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="secao-inner">
+      <div class="centro" style="margin-bottom:2rem">
+        <span class="tag">Dúvidas</span>
+        <h2 class="titulo">Respostas honestas para <em>dúvidas reais.</em></h2>
+      </div>
+      <div class="duvidas">
+        <details><summary>Preciso saber programação?</summary><p>Não. O método foi pensado exatamente para quem está começando.</p></details>
+        <details><summary>Preciso comprar kits ou materiais caros?</summary><p>Não. Sucata, papelão e materiais recicláveis são a base. Sem custo extra.</p></details>
+        <details><summary>Tenho pouco tempo para planejar. Vou conseguir?</summary><p>Sim. Os projetos já estão prontos para aplicar. Você adapta, não constrói do zero.</p></details>
+        <details><summary>Funciona na sala de aula de verdade?</summary><p>O método foi testado em sala de aula real, com alunos reais. Nada de cenário idealizado.</p></details>
+        <details><summary>Como recebo o e-book depois da compra?</summary><p><span class="base">Formato do arquivo e como o acesso chega ao comprador.</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao centro">
+    <div class="secao-inner">
+      <h2 class="titulo">A BNCC e a PNED não são o futuro. <em>São o agora.</em></h2>
+      <p class="texto">Comece com o que você já tem e transforme suas aulas em experiências que seus alunos não vão esquecer.</p>
+      <div class="compra">
+        <span class="preco-de">De R$ 69</span>
+        <p class="preco">R$ 49</p>
+        <a href="https://marketing11782308372.hotmart.host/comprarebook" class="btn btn-verde" target="_blank" rel="noopener">Comprar na Hotmart</a>
+        <p class="nota"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abre em uma nova aba a página da Hotmart, onde o pagamento é feito.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- RODAPÉ (igual em todas as telas) -->
+<footer class="rodape">
+  <div class="rodape-inner">
+    <div>
+      <span class="logo-nome"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></span>
+      <p class="rodape-desc">Empoderando educadores STEAM. Transformando gerações.<br>Skillers formando Skillis para os desafios do futuro.</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/steameducationbr/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/skilliu/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/skilliu.steameducation" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="rodape-colunas">
+      <div>
+        <h4>Programa SKY</h4>
+        <ul>
+          <li><a href="programa-sky.html">O que é o Programa SKY</a></li>
+          <li><a href="ebook.html">E-book</a></li>
+          <li><a href="programa-sky.html#cursos">Cursos e formações</a></li>
+          <li><a href="assessoria.html">Assessoria para escolas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="quem-somos.html">Quem somos</a></li>
+          <li><a href="quem-somos.html#missao">Missão e valores</a></li>
+          <li><a href="impacto.html">Impacto</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="universo.html">Universo Skilliu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:bora@skilliu.org">bora@skilliu.org</a></li>
+          <li><a href="https://wa.me/5518996769040" target="_blank" rel="noopener">18 99676 9040</a></li>
+          <li><a href="#" data-formulario="contato">Fale com a gente</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rodape-base">
+    <p>© <span class="ano">2026</span> Skilliu · CNPJ: 34.697.967/0001-96 · Alinhado à BNCC · PNED · ODS da Agenda 2030</p>
+    <p><a href="termos-de-uso.html">Termos de Uso</a> · <a href="politica-de-privacidade.html">Política de Privacidade</a></p>
+  </div>
+</footer>
+
+<!-- Modal único: o conteúdo muda conforme o botão clicado (ver script.js) -->
+<dialog class="modal" id="modalForm"></dialog>
+
+<!-- Legenda do protótipo -->
+<p class="legenda-base">Texto em vermelho = base, precisa de informação da equipe</p>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+:root{
+  --g1:#32a557;--g2:#28904a;--g3:#8de6a7;--g4:#c8f5d8;
+  --b1:#152b55;--b2:#1e3d6e;--b3:#3a5f95;
+  --off:#f4faf6;--white:#fff;
+  --border:rgba(50,165,87,.13);
+  --shadow:rgba(21,43,85,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:#fff;color:var(--b1);line-height:1.7;}
+
+.legal-topbar{
+  position:sticky;top:0;z-index:50;
+  background:#fff;border-bottom:1px solid var(--border);
+  padding:1rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.legal-topbar .logo-name{font-family:'Urbanist',sans-serif;font-weight:900;font-size:1.3rem;}
+.legal-topbar .logo-skill{color:var(--g1);}
+.legal-topbar .logo-iu{color:var(--b1);}
+.legal-voltar{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--g4);color:var(--g2);
+  font-weight:800;font-size:.85rem;
+  padding:.6rem 1.1rem;border-radius:100px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background .2s;
+}
+.legal-voltar:hover{background:var(--g3);}
+
+.legal-content{
+  max-width:760px;margin:0 auto;
+  padding:3rem 5vw 5rem;
+}
+.legal-content h1{
+  font-family:'Urbanist',sans-serif;font-weight:900;font-size:1.9rem;
+  color:var(--b1);margin-bottom:.5rem;line-height:1.25;
+}
+.legal-content > p:first-of-type{
+  color:var(--b3);font-size:.85rem;font-weight:700;margin-bottom:2rem;
+}
+.legal-content h2{
+  font-family:'Urbanist',sans-serif;font-weight:800;font-size:1.25rem;
+  color:var(--g2);margin:2.2rem 0 .8rem;
+}
+.legal-content h3{
+  font-family:'Urbanist',sans-serif;font-weight:800;font-size:1.05rem;
+  color:var(--b1);margin:1.4rem 0 .6rem;
+}
+.legal-content p{
+  font-size:.95rem;color:rgba(21,43,85,.85);margin-bottom:1rem;
+}
+.doc-table{
+  width:100%;border-collapse:collapse;margin:1.2rem 0 1.6rem;
+  font-size:.88rem;border-radius:12px;overflow:hidden;
+  border:1px solid var(--border);
+}
+.doc-table tr:not(:last-child){border-bottom:1px solid var(--border);}
+.doc-table th,.doc-table td{padding:.7rem 1rem;text-align:left;}
+.doc-table th{background:var(--off);color:var(--b1);font-weight:800;width:220px;}
+.doc-table td{color:rgba(21,43,85,.85);}
+
+.legal-footer-nav{
+  max-width:760px;margin:0 auto;padding:0 5vw 4rem;
+  display:flex;justify-content:center;
+}

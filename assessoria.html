@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessoria SKY para escolas | Skilliu</title>
+<meta name="description" content="A Assessoria SKY acompanha escolas na adaptação à legislação educacional. Começa pelo Diagnóstico Radar Sky, gratuito e online.">
+<link rel="icon" href="fotos/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  BARRA SUPERIOR (igual em todas as telas)
+  Início · Programa SKY ▾ · Recursos · Comunidade · Sobre ▾ · [Fale com a gente]
+  Cada opção dos submenus tem uma linha explicando o que é.
+-->
+<header class="nav" id="nav">
+  <a href="index.html" class="logo" aria-label="Skilliu, página inicial">
+    <span class="logo-nome"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></span>
+    <span class="logo-sub">Steam Education</span>
+  </a>
+  <button class="hamburguer" id="hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav aria-label="Menu principal">
+    <ul class="menu" id="menu">
+      <li><a href="index.html" class="menu-link">Início</a></li>
+
+      <!-- Programa SKY: tudo o que a Skilliu oferece -->
+      <li>
+        <button type="button" class="menu-link ativo" aria-expanded="false" aria-controls="sub-sky">Programa SKY <svg class="seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <ul class="submenu" id="sub-sky">
+          <li><a href="programa-sky.html">
+            <span class="sub-titulo">O que é o Programa SKY</span>
+            <span class="sub-desc">E-book, cursos e assessoria para levar o STEAM à sala de aula</span></a></li>
+          <li><a href="ebook.html">
+            <span class="sub-titulo">E-book <span class="sub-selo sub-selo-verde">Disponível</span></span>
+            <span class="sub-desc">Robótica Descomplicada: 3 projetos prontos, sem kits caros</span></a></li>
+          <li><a href="programa-sky.html#cursos">
+            <span class="sub-titulo">Cursos e formações <span class="sub-selo">Em breve</span></span>
+            <span class="sub-desc">Para professores de todas as disciplinas</span></a></li>
+          <li><a href="assessoria.html" aria-current="page">
+            <span class="sub-titulo">Assessoria para escolas</span>
+            <span class="sub-desc">Começa por um diagnóstico online gratuito</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="recursos.html" class="menu-link">Recursos</a></li>
+      <li><a href="comunidade.html" class="menu-link">Comunidade</a></li>
+
+      <!-- Sobre: quem é a Skilliu -->
+      <li>
+        <button type="button" class="menu-link" aria-expanded="false" aria-controls="sub-sobre">Sobre <svg class="seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <ul class="submenu" id="sub-sobre">
+          <li><a href="quem-somos.html">
+            <span class="sub-titulo">Quem somos</span>
+            <span class="sub-desc">Nossa história e por que a Skilliu existe</span></a></li>
+          <li><a href="quem-somos.html#missao">
+            <span class="sub-titulo">Missão e valores</span>
+            <span class="sub-desc">No que acreditamos</span></a></li>
+          <li><a href="impacto.html">
+            <span class="sub-titulo">Impacto</span>
+            <span class="sub-desc">Como a educação vai além da sala de aula</span></a></li>
+          <li><a href="universo.html">
+            <span class="sub-titulo">Universo Skilliu</span>
+            <span class="sub-desc">Conheça Lia, Hélio, Kyra e Kyro</span></a></li>
+        </ul>
+      </li>
+
+      <li><button type="button" class="menu-cta" data-formulario="contato">Fale com a gente</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="pagina-topo">
+    <div class="secao-inner dividido">
+      <div>
+        <nav class="trilha-nav" aria-label="Você está aqui"><a href="index.html">Início</a> › <a href="programa-sky.html">Programa SKY</a> › Assessoria para escolas</nav>
+        <span class="tag">Trilha 3 · Assessoria SKY</span>
+        <h1 class="pagina-titulo">Não sabe por onde começar? <em>Essa trilha é para a sua escola.</em></h1>
+        <p class="texto">A Assessoria SKY acompanha escolas na adaptação às exigências da legislação educacional, respeitando a realidade, o orçamento e o contexto de cada instituição.</p>
+        <div class="botoes">
+          <a href="#radar" class="btn btn-verde">Conhecer o Diagnóstico Radar Sky</a>
+        </div>
+      </div>
+      <img src="fotos/sessao3-trilha3.png" alt="Gestoras escolares analisando um relatório" class="foto">
+    </div>
+  </section>
+
+  <!-- O DIAGNÓSTICO: o que ele avalia -->
+  <section class="secao" id="radar">
+    <div class="secao-inner dividido" style="align-items:start">
+      <div>
+        <span class="tag">O ponto de partida</span>
+        <h2 class="titulo">Diagnóstico <em>Radar Sky</em></h2>
+        <p class="texto">Um teste online gratuito que ajuda a escola a entender exatamente onde está e para onde precisa ir em relação a:</p>
+        <ul class="chips">
+          <li>STEAM Education</li>
+          <li>BNCC</li>
+          <li>PNED (Política Nacional de Educação Digital)</li>
+          <li>Mundo VUCA</li>
+          <li>Novas profissões</li>
+          <li>Desenvolvimento tecnológico</li>
+        </ul>
+        <p class="texto"><span class="base">Mundo VUCA: um mundo volátil, incerto, complexo e ambíguo, para o qual a escola precisa preparar os alunos.</span></p>
+      </div>
+      <div class="caixa-verde">
+        <h3 class="subtitulo">Para quem é</h3>
+        <p class="texto"><span class="base">Diretores, coordenadores e gestores de escolas e redes que precisam se adequar à BNCC e à PNED e não sabem por onde começar.</span></p>
+        <p class="texto"><span class="base">Quem pode responder o diagnóstico (só gestão ou também professores) e quanto tempo leva.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="secao">
+    <div class="secao-inner">
+      <span class="tag">Como funciona</span>
+      <h2 class="titulo">Do diagnóstico <em>ao plano da sua escola.</em></h2>
+      <ol class="passos" style="margin-top:2rem">
+        <li><h3>Faça o diagnóstico</h3><p>Responda o teste online, gratuito, sobre a situação atual da escola.</p></li>
+        <li><h3>Veja o resultado</h3><p>Receba um relatório com um gráfico que mostra onde a escola está em cada tema.</p></li>
+        <li><h3>Converse com a equipe</h3><p>Com o diagnóstico em mãos, nossa equipe apresenta um caminho possível, concreto, acessível e alinhado à sua realidade.</p></li>
+      </ol>
+      <p class="texto" style="margin-top:1.4rem"><span class="base">Como a equipe entra em contato, em quanto tempo, e como é a assessoria depois do diagnóstico (formato, duração e investimento).</span></p>
+    </div>
+  </section>
+
+  <section class="secao centro">
+    <div class="secao-inner estreito">
+      <h2 class="titulo">Comece pelo <em>diagnóstico gratuito.</em></h2>
+      <p class="texto">Sua escola descobre onde está e qual é o próximo passo.</p>
+      <div class="botoes">
+        <!-- No site no ar, este link é relativo: radar-sky/index.html -->
+        <a href="https://skilliu.org/radar-sky/index.html" class="btn btn-verde" target="_blank" rel="noopener">Fazer o Diagnóstico Radar Sky</a>
+        <button type="button" class="btn btn-contorno" data-formulario="contato">Tirar dúvidas</button>
+      </div>
+      <p class="nota" style="justify-content:center"><i class="fa-solid fa-arrow-up-right-from-square"></i> O diagnóstico abre em uma nova aba.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- RODAPÉ (igual em todas as telas) -->
+<footer class="rodape">
+  <div class="rodape-inner">
+    <div>
+      <span class="logo-nome"><span class="logo-skill">Skill</span><span class="logo-iu">iu</span></span>
+      <p class="rodape-desc">Empoderando educadores STEAM. Transformando gerações.<br>Skillers formando Skillis para os desafios do futuro.</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/steameducationbr/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/skilliu/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/skilliu.steameducation" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="rodape-colunas">
+      <div>
+        <h4>Programa SKY</h4>
+        <ul>
+          <li><a href="programa-sky.html">O que é o Programa SKY</a></li>
+          <li><a href="ebook.html">E-book</a></li>
+          <li><a href="programa-sky.html#cursos">Cursos e formações</a></li>
+          <li><a href="assessoria.html">Assessoria para escolas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="quem-somos.html">Quem somos</a></li>
+          <li><a href="quem-somos.html#missao">Missão e valores</a></li>
+          <li><a href="impacto.html">Impacto</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="universo.html">Universo Skilliu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:bora@skilliu.org">bora@skilliu.org</a></li>
+          <li><a href="https://wa.me/5518996769040" target="_blank" rel="noopener">18 99676 9040</a></li>
+          <li><a href="#" data-formulario="contato">Fale com a gente</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rodape-base">
+    <p>© <span class="ano">2026</span> Skilliu · CNPJ: 34.697.967/0001-96 · Alinhado à BNCC · PNED · ODS da Agenda 2030</p>
+    <p><a href="termos-de-uso.html">Termos de Uso</a> · <a href="politica-de-privacidade.html">Política de Privacidade</a></p>
+  </div>
+</footer>
+
+<!-- Modal único: o conteúdo muda conforme o botão clicado (ver script.js) -->
+<dialog class="modal" id="modalForm"></dialog>
+
+<!-- Legenda do protótipo -->
+<p class="legenda-base">Texto em vermelho = base, precisa de informação da equipe</p>
+
+<script src="script.js"></script>
+</body>
+</html>
